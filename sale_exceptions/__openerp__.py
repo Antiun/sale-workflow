@@ -2,8 +2,11 @@
 #
 #
 #    OpenERP, Open Source Management Solution
-#    Authors: Raphaël Valyi, Renato Lima
 #    Copyright (C) 2011 Akretion LTDA.
+#    authors: Raphaël Valyi, Renato Lima
+#    Copyright (C) 2010-2012 Akretion Sébastien BEAU
+#    <sebastien.beau@akretion.com>
+#    Copyright (C) 2012 Camptocamp SA (Guewen Baconnier)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -20,39 +23,27 @@
 #
 #
 {'name': 'Sale Exceptions',
- 'summary': 'Custom exceptions on sale order',
- 'version': '1.0',
+ 'version': '0.1',
  'category': 'Generic Modules/Sale',
  'description': """
-Sale Exceptions
-===============
-
 This module allows you attach several customizable exceptions to your
 sale order in a way that you can filter orders by exceptions type and fix them.
 
 This is especially useful in an order importation scenario such as with
 the base_sale_multi_channels module, because it's likely a few orders have
-errors when you import them (like product not found in Odoo, wrong line
+errors when you import them (like product not found in OpenERP, wrong line
 format etc...)
-
-Contributors
-------------
-
-* Raphaël Valyi <raphael.valyi@akretion.com>
-* Renato Lima <renato.lima@akretion.com>
-* Sébastien BEAU <sebastien.beau@akretion.com>
-* Guewen Baconnier <guewen.baconnier@camptocamp.com>
-* Yannick Vaucher <yannick.vaucher@camptocamp.com>
-
 """,
  'author': "Akretion,Odoo Community Association (OCA)",
  'website': 'http://www.akretion.com',
  'depends': ['sale'],
- 'data': ['sale_workflow.xml',
-          'sale_view.xml',
-          'sale_exceptions_data.xml',
-          'wizard/sale_exception_confirm_view.xml',
-          'security/ir.model.access.csv',
-          'settings/sale.exception.csv'],
+ 'init_xml': ['settings/sale.exception.csv'],
+ 'update_xml': ['sale_workflow.xml',
+                'sale_view.xml',
+                'sale_exceptions_data.xml',
+                'wizard/sale_exception_confirm_view.xml',
+                'security/ir.model.access.csv',
+                'security/ir_rule.xml'],
+ 'demo_xml': [],
  'installable': True,
  }

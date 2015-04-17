@@ -2,7 +2,7 @@
 #
 #
 #    Author: Guewen Baconnier
-#    Copyright 2013-2014 Camptocamp SA
+#    Copyright 2013 Camptocamp SA
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -20,8 +20,7 @@
 #
 
 {'name': 'Sale Sourced by Line',
- 'summary': 'Multiple warehouse source locations for Sale order',
- 'version': '1.0',
+ 'version': '0.1',
  'author': "Camptocamp,Odoo Community Association (OCA)",
  'category': 'Warehouse',
  'license': 'AGPL-3',
@@ -33,19 +32,8 @@ Sale Sourced by Line
 ====================
 
 Adds the possibility to source a line of sale order from a specific
-warehouse instead of using the warehouse of the sale order.
-
-This will create one procurement group per warehouse set in sale
-order lines.
-
-It will only supports routes such as MTO and Drop Shipping.
-
-Contributors
-------------
-
-* Guewen Baconnier <guewen.baconnier@camptocamp.com>
-* Yannick Vaucher <yannick.vaucher@camptocamp.com>
-
+location instead of using the location of the warehouse of the selected
+shop
 """,
  'depends': ['sale_stock',
              ],
@@ -53,7 +41,6 @@ Contributors
  'data': ['view/sale_view.xml',
           ],
  'test': ['test/sale_order_source.yml',
-          'test/sale_order_multi_source.yml',
           'test/sale_order_not_sourced.yml',
           ],
  'auto_install': False,
